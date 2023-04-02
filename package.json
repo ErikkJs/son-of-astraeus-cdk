@@ -8,7 +8,6 @@
     "generate:services": "run-p generate:services:*",
     "generate:services:twitter": "./node_modules/.bin/openapi --input ./twitter.spec.json --output ./generated/TwitterService --client axios --name TwitterService",
     "build": "AWS_PROFILE=erik tsc && cdk synth",
-    "start-api": "sam local start-api -t ./cdk.out/SharpPortalCdkStack.template.json --log-file logfile.txt",
     "watch": "tsc -w",
     "test": "jest --runInBand --detectOpenHandles --forceExit --verbose",
     "cdk": "cdk",

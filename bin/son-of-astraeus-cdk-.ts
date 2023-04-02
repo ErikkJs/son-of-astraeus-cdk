@@ -7,8 +7,8 @@ require('dotenv').config();
 
 let props = {
   env: {
-    account: '456103903859',
-    region: 'us-west-2',
+    account: process.env.CDK_DEFAULT_ACCOUNT,
+    region: process.env.CDK_DEFAULT_REGION,
   },
   secret: {
     twitterConsumerApiKey: process.env.TWITTER_CONSUMER_API_KEY,

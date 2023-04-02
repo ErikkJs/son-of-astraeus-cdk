@@ -28,10 +28,9 @@ export const handler = async (event: any, context: Context): Promise<void> => {
     console.info('Uploaded media:', uploadedMediaId);
 
     console.info('Creating tweet with media...');
-    await twitterClient.createTweetWithMedia(
-      `${Apod.title} \n ${chatGptResponse}`,
-      uploadedMediaId
-    );
+    await twitterClient.createTweetWithMedia(` ${chatGptResponse}`, uploadedMediaId);
+
+    return;
   } catch (error) {
     console.error('Error occurred while running, see error below:');
     console.error(error);

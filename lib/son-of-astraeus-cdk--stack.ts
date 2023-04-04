@@ -9,8 +9,8 @@ import {TwitterCredentials} from '../src/connections/twitter';
 
 interface SonOfAstraeusCdkStackProps extends cdk.StackProps {
   env: {
-    account: string;
-    region: string;
+    account?: string;
+    region?: string;
   };
   secret: TwitterCredentials;
 }

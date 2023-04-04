@@ -11,7 +11,7 @@
     "watch": "tsc -w",
     "test": "jest --runInBand --detectOpenHandles --forceExit --verbose",
     "cdk": "cdk",
-    "deploy": "AWS_PROFILE=erik cdk deploy",
+    "deploy": "AWS_PROFILE=erik cdk deploy --all",
     "destroy": "cdk destroy"
   },
   "devDependencies": {

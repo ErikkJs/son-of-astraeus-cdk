@@ -16,7 +16,6 @@ export class OpenAIClient {
         model: 'text-davinci-003',
         prompt: query,
         max_tokens: 120,
-        
       });
 
       if (response.data) {
@@ -25,6 +24,7 @@ export class OpenAIClient {
 
       return response.data.choices[0].text as string;
     } catch (error) {
+      console.error('Error sending query to ChatGPT:', error);
       throw new Error(`Error sending query to ChatGPT: ${error}`);
     }
   }

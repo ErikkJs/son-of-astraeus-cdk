@@ -24,7 +24,6 @@ export class SonOfAstraeusCdkStack extends cdk.Stack {
       description: 'Twitter API keys and access tokens, for son... of astreus',
       generateSecretString: {
         secretStringTemplate: JSON.stringify(props?.secret),
-        generateStringKey: 'password', // This can be any unused key, it won't be used in our implementation
         excludePunctuation: true,
         includeSpace: false,
       },
@@ -45,7 +44,7 @@ export class SonOfAstraeusCdkStack extends cdk.Stack {
 
     // Set up the Amazon EventBridge rule to trigger the Lambda function
     const eventRule = new events.Rule(this, 'TwitterBotEventRule', {
-      schedule: events.Schedule.cron({minute: '0', hour: '12'}), // Set your desired schedule (e.g., every day at 12:00 PM)
+      schedule: events.Schedule.cron({minute: '0', hour: '6'}), // 6:00 AM UTC
     });
 
     // Add the Lambda function as a target for the EventBridge rule
